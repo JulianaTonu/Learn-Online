@@ -1,0 +1,26 @@
+.navbar{
+    background-color: rgb(69, 69, 26);
+    /* background: transparent; */
+   
+    
+    
+}
+.logo{
+    width: 65px;
+    height: 40px;
+    border-radius: 3px;
+    margin-right: 4px;
+}
+.title{
+   
+     font-family: bold;
+     font-weight: bold;
+     font-size: 25px;
+}
+.nav{
+   
+    text-decoration: none;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 20px;
+}
