@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './SideNav.css';
 
 const SideNav = () => {
@@ -12,6 +13,16 @@ const SideNav = () => {
     return (
         <div>
             <h1>All Category : {categories.length}</h1>
+            <div>
+              {
+
+                  categories.map(category => <p
+                key={category.id}>
+                 <Link to={`/category/:${category.id}`}>{category.name}</Link>
+
+                </p>)
+              }
+            </div>
         </div>
     );
 };
