@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import {  NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
@@ -7,9 +7,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import './Header.css'
 import logo from  '../../images/logo.jpg'
 import SideNav from '../SideNav/SideNav';
+import { AuthContext } from '../../context/UserContext';
 
 
 const Header = () => {
+
+  const {user}=useContext(AuthContext)
     return (
         <div>
             
@@ -27,7 +30,7 @@ const Header = () => {
             <NavLink className="px-3  nav text-warning" to="/blog">Blog</NavLink>
             <NavLink className="px-3  nav text-warning" to="/login">Login</NavLink>
             <NavLink className="px-3  nav text-warning"  to="/register">Register</NavLink>
-            <NavLink className="px-3  nav text-warning" >Light</NavLink>
+            <NavLink className="px-3  nav text-warning" >{user?.displayName}</NavLink>
         <div className='d-lg-none'>
           <SideNav></SideNav>
         </div>

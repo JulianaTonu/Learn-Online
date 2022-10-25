@@ -8,10 +8,31 @@ import { Link } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 
 import './Register.css'
+import { useContext } from 'react';
+import { AuthContext } from '../../context/UserContext';
 
 
         const Register = () => {
           
+       const {createUser} =useContext(AuthContext)   
+
+            const handleSubmit=(event)=>{
+                event.preventDefault()
+                const form =event.target
+                const name =form.name.value
+                const image=form.image.value
+                const email =form.email.value
+                const password =form.password.value;
+                console.log(name, image, email, password)
+
+                createUser(email, password)
+                .then(result=>{
+                  const user =result.user;
+                  console.log(user)
+                  form.reset()
+                })
+                .catch(e=>console.error(e))
+            }
         
             return (
                 <Container className=''>
@@ -22,7 +43,7 @@ import './Register.css'
                   <Col sm={12} lg={7} ><div className='register w-75  '>
                     <h1 className='mb-1 text-center'>Register </h1>
         
-                    <Form >
+                    <Form onSubmit={handleSubmit}>
 
               <Form.Group className="mb-2" controlId="formBasicFullName">
                 <Form.Label className='formlabel fw-bold'>Full Name</Form.Label>
@@ -31,7 +52,7 @@ import './Register.css'
         
               <Form.Group className="mb-2" controlId="formBasicImageUrl">
                 <Form.Label className='formlabel fw-bold'>Image Url</Form.Label>
-                <Form.Control type="text" name="imageurl" placeholder="Image url" />  
+                <Form.Control type="text" name="image" placeholder="Image url" />  
               </Form.Group>
         
               <Form.Group className="mb-2" controlId="formBasicEmail">
