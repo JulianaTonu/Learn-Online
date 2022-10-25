@@ -1,24 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 
 import './Login.css'
-import { useContext } from 'react';
 import { AuthContext } from '../../context/UserContext';
+
 
 
 const Login = () => {
 
-    const {signIn} =useContext(AuthContext)   
+    const navigate =useNavigate()
+    const {signIn} = useContext(AuthContext)   
 
-    const handleSubmit=(event)=>{
+    const handleSubmit = (event)=>{
         event.preventDefault()
-        const form =event.targe
+        const form =event.target
         const email =form.email.value
         const password =form.password.value;
         console.log( email, password)
@@ -28,6 +29,7 @@ const Login = () => {
           const user =result.user;
           console.log(user)
           form.reset()
+          navigate('/')
         })
         .catch(e=>console.error(e))
     }
@@ -38,7 +40,7 @@ const Login = () => {
          
 
           <Col sm={12} lg={7} ><div className='register w-75  '>
-            <h1 className='mb-1 text-center'>Register </h1>
+            <h1 className='mb-1 text-center'>Login </h1>
 
             <Form onSubmit={handleSubmit}>
 
@@ -65,7 +67,7 @@ const Login = () => {
       <button className='google-btn  mt-3' type='submit'><FcGoogle/> GOOGLE</button>
 
      
-      <p className='text-center text-white'><small>New to this website? Please <Link to='/login' className='text-info fw-bold'>Register</Link></small></p>
+      <p className='text-center text-white'><small>New to this website? Please <Link to='/register' className='text-info fw-bold'>Register</Link></small></p>
 
       
       

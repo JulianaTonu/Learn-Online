@@ -12,7 +12,7 @@ const auth = getAuth(app)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    const signIn =(email,password)=>{
+    const signIn =(email,password) =>{
         return signInWithEmailAndPassword(auth, email, password)
     }
     const authInfo ={user ,createUser, signIn}

@@ -5,6 +5,7 @@ import CourseTutorials from "../components/CourseTutorials/CourseTutorials";
 import Tutorials from "../components/Tutorials/Tutorials";
 import CardDetails from "../components/CardDetails/CardDetails";
 import Register from "../components/Register/Register";
+import Login from "../components/Login/Login";
 
 
 
@@ -20,6 +21,10 @@ export const routes =createBrowserRouter([
                 loader :()=> fetch(`http://localhost:5000/tutorials`)
             },
             
+            {
+                path:'/login',
+                element:<Login></Login>
+            },
             {
                 path:'/register',
                 element:<Register> </Register>
