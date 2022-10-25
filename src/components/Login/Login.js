@@ -14,7 +14,7 @@ import { AuthContext } from '../../context/UserContext';
 
 const Login = () => {
 
-    const {signIn} = useContext(AuthContext)   
+    const {signIn, signInwithGoogle} = useContext(AuthContext)   
     const navigate =useNavigate()
     const location =useLocation()
 
@@ -37,6 +37,15 @@ const from =location.state?.from?.pathname || '/'
         .catch(e=>console.error(e))
     }
 
+
+    const handleGoogleSignIn=()=>{
+      signInwithGoogle()
+      .then(result=>{
+        const user =result.user
+        console.log(user)
+      })
+      .catch(e=>console.error(e))
+    }
     return (
         <Container className=''>
         <Row className=''>
@@ -67,7 +76,7 @@ const from =location.state?.from?.pathname || '/'
 
       <button className='sub-btn ' type='submit'>Login</button>
      
-      <button className='google-btn  mt-3' type='submit'><FcGoogle/> GOOGLE</button>
+      <button onClick={handleGoogleSignIn} className='google-btn  mt-3' type='submit'><FcGoogle/> GOOGLE</button>
 
      
       <p className='text-center text-white'><small>New to this website? Please <Link to='/register' className='text-info fw-bold'>Register</Link></small></p>
