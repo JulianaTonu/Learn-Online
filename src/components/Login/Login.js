@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 
 import './Login.css'
@@ -14,8 +14,11 @@ import { AuthContext } from '../../context/UserContext';
 
 const Login = () => {
 
-    const navigate =useNavigate()
     const {signIn} = useContext(AuthContext)   
+    const navigate =useNavigate()
+    const location =useLocation()
+
+const from =location.state?.from?.pathname || '/'
 
     const handleSubmit = (event)=>{
         event.preventDefault()
@@ -29,7 +32,7 @@ const Login = () => {
           const user =result.user;
           console.log(user)
           form.reset()
-          navigate('/')
+          navigate(from,{replace:true})
         })
         .catch(e=>console.error(e))
     }

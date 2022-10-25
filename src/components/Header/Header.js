@@ -12,7 +12,13 @@ import { AuthContext } from '../../context/UserContext';
 
 const Header = () => {
 
-  const {user}=useContext(AuthContext)
+  const {user, logOut}=useContext(AuthContext);
+
+ const handleLogOut = () =>{
+     logOut() 
+    .then(()=>{})
+    .catch(e=>console.error(e))
+  }
     return (
         <div>
             
@@ -31,6 +37,8 @@ const Header = () => {
             <NavLink className="px-3  nav text-warning" to="/login">Login</NavLink>
             <NavLink className="px-3  nav text-warning"  to="/register">Register</NavLink>
             <NavLink className="px-3  nav text-warning" >{user?.displayName}</NavLink>
+            <button onClick={handleLogOut} className="px-3 btn btn-warning" >Logout</button>
+
         <div className='d-lg-none'>
           <SideNav></SideNav>
         </div>

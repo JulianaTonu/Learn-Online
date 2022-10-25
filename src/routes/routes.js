@@ -6,6 +6,7 @@ import Tutorials from "../components/Tutorials/Tutorials";
 import CardDetails from "../components/CardDetails/CardDetails";
 import Register from "../components/Register/Register";
 import Login from "../components/Login/Login";
+import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 
 
 
@@ -38,7 +39,7 @@ export const routes =createBrowserRouter([
           
             {
                 path:'/details/:id',
-                element:<CardDetails></CardDetails>,
+                element:<PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
                 loader: ({params})=> fetch(`http://localhost:5000/tutorials/${params.id}`)
             },
 
