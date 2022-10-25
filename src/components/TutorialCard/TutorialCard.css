@@ -1,20 +1,10 @@
 
 .tutorial{
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    box-shadow: 4px 4px 8px rgb(68, 39, 254);
 }
 
-.tutorial-card {
-    /* height: 480px; */
-    width: 350px;
-    /* width: 250px; */
-    border: 2px solid rgb(98, 97, 97);
-  box-shadow: 4px 4px 8px gray;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    position: relative;
-    background-color: blanchedalmond;
-    
-}
+
 .img{
     height: 260px;
     /* width: 348px; */

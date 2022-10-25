@@ -21,6 +21,8 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="">
             <NavLink className="px-3 ms-5 nav text-warning" to="/">Tutorials</NavLink>
+
+            {/* <NavLink className="px-3 ms-5 nav text-warning" to="/">Tutorials</NavLink> */}
            
             <NavLink className="px-3  nav text-warning" to="/blog">Blog</NavLink>
             <NavLink className="px-3  nav text-warning" to="/login">Login</NavLink>
