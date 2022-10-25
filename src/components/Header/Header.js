@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './Header.css'
 import logo from  '../../images/logo.jpg'
+import SideNav from '../SideNav/SideNav';
 
 
 const Header = () => {
@@ -19,13 +20,15 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="">
-            <NavLink className="px-3 ms-5 nav text-warning" to="/">Courses</NavLink>
+            <NavLink className="px-3 ms-5 nav text-warning" to="/">Tutorials</NavLink>
            
             <NavLink className="px-3  nav text-warning" to="/blog">Blog</NavLink>
             <NavLink className="px-3  nav text-warning" to="/login">Login</NavLink>
             <NavLink className="px-3  nav text-warning"  to="/register">Register</NavLink>
             <NavLink className="px-3  nav text-warning" >Light</NavLink>
-        
+        <div className='d-lg-none'>
+          <SideNav></SideNav>
+        </div>
            
           </Nav>
         </Navbar.Collapse>
