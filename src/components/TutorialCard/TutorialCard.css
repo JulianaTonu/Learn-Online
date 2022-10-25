@@ -1,0 +1,38 @@
+
+
+
+.tutorial-card {
+    /* height: 480px; */
+    width: 350px;
+    /* width: 250px; */
+    border: 2px solid rgb(98, 97, 97);
+  box-shadow: 4px 4px 8px gray;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    position: relative;
+    background-color: blanchedalmond;
+    
+}
+.tutorial-card  img{
+    height: 256px;
+    width: 348px;
+    /* width: 248px; */
+    border-radius: 7px;
+   /* margin-left: 20px; */
+}
+.tutorial-info{
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 55px;
+}
+.tutorial-info h2{
+    font-family: 'Lato';
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 25px;
+    font-style: normal;
+}
+.btn{
+    background-color:  rgb(50, 207, 207);
+    border-radius: 7px;;
+}

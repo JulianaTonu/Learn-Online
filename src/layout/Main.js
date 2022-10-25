@@ -15,8 +15,12 @@ const Main = () => {
                 <SideNav></SideNav>
                 </Col>
 
-                <Col>
+                <Col >
+                <Row>
                 <Outlet></Outlet>
+
+                </Row>
+
                 </Col>
             </Row>
         </Container>
