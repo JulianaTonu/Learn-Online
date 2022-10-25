@@ -5,11 +5,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import { Link } from 'react-router-dom';
-import { FcGoogle } from 'react-icons/fc';
+
 
 import './Register.css'
 import { useContext } from 'react';
 import { AuthContext } from '../../context/UserContext';
+import toast from 'react-hot-toast';
 
 
         const Register = () => {
@@ -23,8 +24,12 @@ import { AuthContext } from '../../context/UserContext';
                 const image=form.image.value
                 const email =form.email.value
                 const password =form.password.value;
-                console.log(name, image, email, password)
+                const confirm =form.confirm.value;
+                console.log(name, image, email, password,confirm)
 
+                if(password !== confirm){
+                  toast.error("password dosen't match")
+                }
                 createUser(email, password)
                 .then(result=>{
                   const user =result.user;
@@ -64,13 +69,18 @@ import { AuthContext } from '../../context/UserContext';
                 <Form.Label className='formlabel fw-bold'>Password</Form.Label>
                 <Form.Control type="password" name="password" placeholder="Password" />
               </Form.Group>
+
+              <Form.Group className="mb-2" controlId="formBasicConfirmPassword">
+                <Form.Label className='formlabel fw-bold'>Confirm Password</Form.Label>
+                <Form.Control type="password" name="confirm" placeholder="confirm password" />
+              </Form.Group>
         
              
               <p className='text-danger fw-bold text-center'><small></small></p>
 
               <button className='sub-btn ' type='submit'>REGISTER</button>
              
-              <button className='google-btn  mt-3' type='submit'><FcGoogle/> GOOGLE</button>
+             
 
              
               <p className='text-center text-white'><small>Already Have an account? please <Link to='/login' className='text-info fw-bold'>Login</Link></small></p>
