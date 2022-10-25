@@ -39,7 +39,6 @@ import { AuthContext } from '../../context/UserContext';
                 <Row className=''>
                  
         
-        
                   <Col sm={12} lg={7} ><div className='register w-75  '>
                     <h1 className='mb-1 text-center'>Register </h1>
         
