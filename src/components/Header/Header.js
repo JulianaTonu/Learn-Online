@@ -36,7 +36,7 @@ const Header = () => {
             <NavLink className="px-3  nav text-warning" to="/blog">Blog</NavLink>
             <NavLink className="px-3  nav text-warning" to="/login">Login</NavLink>
             <NavLink className="px-3  nav text-warning"  to="/register">Register</NavLink>
-            <NavLink className="px-3  nav text-warning" >{user?.displayName}</NavLink>
+            <NavLink className="px-3  nav text-warning" >{user?.email}</NavLink>
             <button onClick={handleLogOut} className="px-3 btn btn-warning" >Logout</button>
 
         <div className='d-lg-none'>
