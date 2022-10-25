@@ -5,17 +5,20 @@
     
     
 }
-.logo{
+
+.logo {
     width: 65px;
     height: 40px;
     border-radius: 3px;
     margin-right: 4px;
+    
 }
 .title{
    
      font-family: bold;
      font-weight: bold;
      font-size: 25px;
+     
 }
 .nav{
    

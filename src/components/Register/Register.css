@@ -1,0 +1,73 @@
+
+.register{
+    
+    margin-top: 30px;
+    margin-bottom: 30px;
+     /* border: 2px solid rgb(0, 229, 255); */
+     /* background-color: rgb(196, 243, 255); */
+     border: 0.5px solid rgb(161, 163, 163);
+     border-radius: 10px;
+     padding: 10px 15px;
+     box-shadow: 3px 4px 8px  rgb(130, 165, 165);
+ margin-left: 45%;
+ 
+ }
+ .register h1{
+     color: rgb(134, 239, 248);
+     text-shadow: 2px 2px 2px  rgb(3, 122, 181);
+ }
+ 
+ .formlabel{
+     color: rgb(120, 233, 250);
+ }
+ .sub-btn{
+     width: 260px;
+     background-color: rgb(7, 245, 245);
+     color: rgb(7, 28, 67);
+     
+     font-weight: 500;
+     padding: 9px 20px;
+     border-radius: 8px;
+     box-shadow: 2px 2px 2px rgb(6, 29, 99);
+     border: none;
+     margin-left: 10px;
+ }
+ 
+ .sub-btn:hover{
+     background-color: rgb(5, 73, 199) ;
+     color: white;
+     font-weight: 500;
+ }
+ 
+ .google-btn{
+     width: 260px;
+     background-color: rgb(16, 252, 134) ;
+     color: rgb(15, 1, 1);
+     font-weight: 500;
+     padding: 9px 20px;
+     border-radius: 8px;
+     box-shadow: 2px 2px 2px rgb(6, 29, 99);
+     margin-left: 10px;
+     border: none;
+ }
+ .google-btn:hover{
+     background-color:  rgb(2, 107, 55) ;
+     color: rgb(243, 245, 249);
+     font-weight: 500;
+ }
+
+ @media Screen and (max-width:767px){
+    .register{
+        margin:auto;
+    }
+    .sub-btn{
+        width: 190px;
+        margin: auto;
+        padding: auto;
+    }
+    .google-btn{
+        margin: auto;
+        padding:auto;
+        width: 190px;
+    }
+ }
