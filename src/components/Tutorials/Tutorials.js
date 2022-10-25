@@ -6,10 +6,11 @@ const Tutorials = () => {
     const all_tutorials = useLoaderData()
     console.log(all_tutorials)
     return (
-        <div className='tutorial-container '>
-        <h1>All Tutorials are here.Choose your favrite topic and start learn from today.Good Luck.</h1>
+        <>
+        <h3 >All Tutorials are here.Choose your favrite topic and start learn from today.Good Luck.</h3>
 
-<div className='card'>
+      <div className='col tuto '>
+     
 
 {
                 all_tutorials.map(tutorial => <TutorialCard
@@ -19,7 +20,7 @@ const Tutorials = () => {
             }
 
 </div>
-        </div>
+        </>
     );
 };
 

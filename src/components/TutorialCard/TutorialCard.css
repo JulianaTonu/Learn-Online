@@ -1,5 +1,7 @@
 
-
+.tutorial{
+    margin-bottom: 15px;
+}
 
 .tutorial-card {
     /* height: 480px; */
@@ -13,9 +15,9 @@
     background-color: blanchedalmond;
     
 }
-.tutorial-card  img{
-    height: 256px;
-    width: 348px;
+.img{
+    height: 260px;
+    /* width: 348px; */
     /* width: 248px; */
     border-radius: 7px;
    /* margin-left: 20px; */
