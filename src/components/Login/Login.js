@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
+import { FaGithub } from 'react-icons/fa';
 
 import './Login.css'
 import { AuthContext } from '../../context/UserContext';
@@ -14,7 +15,7 @@ import { AuthContext } from '../../context/UserContext';
 
 const Login = () => {
 
-    const {signIn, signInwithGoogle} = useContext(AuthContext)   
+    const {signIn, signInwithGoogle,signInWithGithub} = useContext(AuthContext)   
     const navigate =useNavigate()
     const location =useLocation()
 
@@ -40,6 +41,15 @@ const from =location.state?.from?.pathname || '/'
 
     const handleGoogleSignIn=()=>{
       signInwithGoogle()
+      .then(result=>{
+        const user =result.user
+        console.log(user)
+      })
+      .catch(e=>console.error(e))
+    }
+
+    const handleGithubSignIn =()=>{
+      signInWithGithub()
       .then(result=>{
         const user =result.user
         console.log(user)
@@ -77,6 +87,8 @@ const from =location.state?.from?.pathname || '/'
       <button className='sub-btn ' type='submit'>Login</button>
      
       <button onClick={handleGoogleSignIn} className='google-btn  mt-3' type='submit'><FcGoogle/> GOOGLE</button>
+
+      <button onClick={ handleGithubSignIn} className='google-btn  mt-3' type='submit'><FaGithub/> Github</button>
 
      
       <p className='text-center text-primary'><small>New to this website? Please <Link to='/register' className='text-info fw-bold'>Register</Link></small></p>

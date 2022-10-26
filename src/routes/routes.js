@@ -37,6 +37,9 @@ export const routes =createBrowserRouter([
                 path:'/blog',
                 element:<Blog></Blog>
             },
+
+            
+
             {
                 path:'/category/:id',
                 element:<CourseTutorials></CourseTutorials>,
@@ -46,13 +49,13 @@ export const routes =createBrowserRouter([
           
             {
                 path:'/details/:id',
-                element:<PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
+                element:<CardDetails></CardDetails>,
                 loader: ({params})=> fetch(`http://localhost:5000/tutorials/${params.id}`)
             },
 
             {
                 path:'/checkout/:id',
-                element:<CheckOut></CheckOut>,
+                element:<PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
                 loader: ({params})=> fetch(`http://localhost:5000/tutorials/${params.id}`)
             }
            

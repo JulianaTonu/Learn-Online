@@ -93,10 +93,8 @@ import toast from 'react-hot-toast';
               <p className='text-danger fw-bold text-center'><small></small></p>
 
               <button className='sub-btn ' type='submit'>REGISTER</button>
-             
-             
+            
 
-             
               <p className='text-center text-primary'><small>Already Have an account? please <Link to='/login' className='text-info fw-bold'>Login</Link></small></p>
 
               

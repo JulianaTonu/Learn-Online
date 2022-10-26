@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from './../firebase/firebase.init';
-import  { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, updateProfile } from 'firebase/auth'
+import  { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, updateProfile, GithubAuthProvider } from 'firebase/auth'
 export const AuthContext =createContext()
 const auth = getAuth(app)
 
@@ -11,6 +11,8 @@ const UserContext = ({children}) => {
     // const user ={displayName:"Juliana"}
     
 const googleProvider =new GoogleAuthProvider()
+const githubProvider =new GithubAuthProvider()
+
     
 //createNewUser by registrations
     const createUser =(email, password)=>{
@@ -31,6 +33,11 @@ const signInwithGoogle=()=>{
     setLoading(true)
 
 return signInWithPopup(auth , googleProvider)
+}
+
+//githubsignIn
+const signInWithGithub=()=>{
+    return signInWithPopup (auth, githubProvider)
 }
 
 //for update profile
@@ -56,7 +63,7 @@ console.log('changed state', currentUser)
     }
 }, [])
 
-    const authInfo ={user ,createUser, signIn,logOut,signInwithGoogle, loading,updateUserProfile}
+    const authInfo ={user ,createUser, signIn,logOut,signInwithGoogle, loading,updateUserProfile, signInWithGithub}
     return (
         <AuthContext.Provider value={authInfo} >
             {children}
