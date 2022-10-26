@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 import './Register.css'
@@ -17,6 +17,8 @@ import toast from 'react-hot-toast';
           
        const {createUser, updateUserProfile} =useContext(AuthContext)   
 
+       const navigate =useNavigate()
+       
             const handleSubmit=(event)=>{
                 event.preventDefault()
                 const form =event.target
@@ -35,6 +37,9 @@ import toast from 'react-hot-toast';
                   const user =result.user;
                   console.log(user)
                   form.reset()
+                  navigate('/login')
+
+
                   handleUpdateProfile(name , image)
                 })
                 .catch(e=>console.error(e))
