@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -15,7 +15,8 @@ import { AuthContext } from '../../context/UserContext';
 
 const Login = () => {
 
-    const {signIn, signInwithGoogle,signInWithGithub} = useContext(AuthContext)   
+    const {signIn, signInwithGoogle,signInWithGithub} = useContext(AuthContext)  
+    const [error , setError] =useState('') 
     const navigate =useNavigate()
     const location =useLocation()
 
@@ -35,17 +36,25 @@ const from =location.state?.from?.pathname || '/'
           form.reset()
           navigate(from,{replace:true})
         })
-        .catch(e=>console.error(e))
-    }
+        .catch(error=>{
 
+          console.error(error)
+          setError(error.message)
+    })
+  }
 
     const handleGoogleSignIn=()=>{
       signInwithGoogle()
       .then(result=>{
         const user =result.user
         console.log(user)
+        setError('')
       })
-      .catch(e=>console.error(e))
+      .catch(error=>{
+
+        console.error(error)
+        setError(error.message);
+        })
     }
 
     const handleGithubSignIn =()=>{
@@ -54,7 +63,10 @@ const from =location.state?.from?.pathname || '/'
         const user =result.user
         console.log(user)
       })
-      .catch(e=>console.error(e))
+      .catch(error=>{
+
+        console.error(error)
+        setError(error.message)})
     }
     return (
         <Container className=''>
@@ -83,7 +95,7 @@ const from =location.state?.from?.pathname || '/'
 
      
       <p className='text-danger fw-bold text-center'><small></small></p>
-
+<p className='my-2 text-danger'>{error}</p>
       <button className='sub-btn ' type='submit'>Login</button>
      
       <button onClick={handleGoogleSignIn} className='google-btn  mt-3' type='submit'><FcGoogle/> GOOGLE</button>
