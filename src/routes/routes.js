@@ -53,5 +53,10 @@ export const routes =createBrowserRouter([
 
 
         ]
+
+    },
+    {
+        path:'*',
+        element:<h4 className="text-primary m-5 p-5">404 The Page is not Found</h4>
     }
 ])

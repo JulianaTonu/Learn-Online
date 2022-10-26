@@ -79,7 +79,7 @@ const from =location.state?.from?.pathname || '/'
       <button onClick={handleGoogleSignIn} className='google-btn  mt-3' type='submit'><FcGoogle/> GOOGLE</button>
 
      
-      <p className='text-center text-white'><small>New to this website? Please <Link to='/register' className='text-info fw-bold'>Register</Link></small></p>
+      <p className='text-center text-primary'><small>New to this website? Please <Link to='/register' className='text-info fw-bold'>Register</Link></small></p>
 
       
       

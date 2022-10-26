@@ -16,7 +16,7 @@ const {name, image_url,_id} =tutorial
             {name}
           </Card.Title>
          
-          <Link to={`/details/${_id}`}><Button variant="warning" className='fw-bold px-4'>See Details</Button></Link>
+          <Link to={`/details/${_id}`}><Button variant="primary" className='fw-bold px-4 text-dark'>See Details</Button></Link>
         </Card.Body>
       </Card>
 

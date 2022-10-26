@@ -97,7 +97,7 @@ import toast from 'react-hot-toast';
              
 
              
-              <p className='text-center text-white'><small>Already Have an account? please <Link to='/login' className='text-info fw-bold'>Login</Link></small></p>
+              <p className='text-center text-primary'><small>Already Have an account? please <Link to='/login' className='text-info fw-bold'>Login</Link></small></p>
 
               
               
