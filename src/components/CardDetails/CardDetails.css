@@ -1,15 +1,18 @@
 .img{
-    height: 250px;
+    height: 220px;
 }
 
 .details-card{
-   
-    width: 25rem;
+   margin-top: 15px;
+    width: 30rem;
+    margin-left: 10%;
+    box-shadow: 4px 4px 8px rgb(68, 39, 254);
 }
 @media screen and (max-width:767px){
 
     .details-card{
         width: 18rem;
+        margin: auto;
     }
 }
 

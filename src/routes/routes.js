@@ -8,6 +8,7 @@ import Register from "../components/Register/Register";
 import Login from "../components/Login/Login";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import Blog from "../components/Blog/Blog";
+import CheckOut from "../components/CheckOut/CheckOut";
 
 
 
@@ -49,6 +50,11 @@ export const routes =createBrowserRouter([
                 loader: ({params})=> fetch(`http://localhost:5000/tutorials/${params.id}`)
             },
 
+            {
+                path:'/checkout/:id',
+                element:<CheckOut></CheckOut>,
+                loader: ({params})=> fetch(`http://localhost:5000/tutorials/${params.id}`)
+            }
            
 
 

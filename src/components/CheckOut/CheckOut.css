@@ -1,0 +1,14 @@
+.prime-card{
+    margin-top: 15px;
+     width: 20rem;
+     margin-left: 10%;
+     box-shadow: 4px 4px 8px rgb(68, 39, 254);
+ }
+
+ @media screen and (max-width:767px){
+
+    .prime-card{
+        width: 18rem;
+        margin: auto;
+    }
+}
