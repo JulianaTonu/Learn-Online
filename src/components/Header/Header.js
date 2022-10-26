@@ -8,7 +8,8 @@ import './Header.css'
 import logo from  '../../images/logo.jpg'
 import SideNav from '../SideNav/SideNav';
 import { AuthContext } from '../../context/UserContext';
-
+import { Image } from 'react-bootstrap';
+import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
 
@@ -30,14 +31,32 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="">
             <NavLink className="px-3 ms-5 nav text-warning" to="/">Tutorials</NavLink>
-
-            {/* <NavLink className="px-3 ms-5 nav text-warning" to="/">Tutorials</NavLink> */}
-           
+ 
             <NavLink className="px-3  nav text-warning" to="/blog">Blog</NavLink>
-            <NavLink className="px-3  nav text-warning" to="/login">Login</NavLink>
-            <NavLink className="px-3  nav text-warning"  to="/register">Register</NavLink>
-            <NavLink className="px-3  nav text-warning" >{user?.email}</NavLink>
-            <button onClick={handleLogOut} className="px-3 btn btn-warning" >Logout</button>
+
+            <NavLink className="px-3  nav text-warning" to="/register">Register</NavLink>
+            
+
+{/* // show user name   */}
+{ user?.uid  && user?.photoURL ?
+
+<>
+
+ <NavLink className="px-3  nav text-warning" >{user?.displayName}</NavLink>
+ <Image  title={user?.name}
+style ={{height:'40px'}} roundedCircle
+src={user?.photoURL}
+></Image>
+<button onClick={handleLogOut} className="px-3 ms-3 btn btn-warning" >Logout</button>
+</>
+
+:
+
+<>
+<NavLink className="px-3  nav text-warning" to="/login">Login</NavLink>
+</>
+}
+
 
         <div className='d-lg-none'>
           <SideNav></SideNav>

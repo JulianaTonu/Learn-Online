@@ -15,7 +15,7 @@ import toast from 'react-hot-toast';
 
         const Register = () => {
           
-       const {createUser} =useContext(AuthContext)   
+       const {createUser, updateUserProfile} =useContext(AuthContext)   
 
             const handleSubmit=(event)=>{
                 event.preventDefault()
@@ -35,11 +35,25 @@ import toast from 'react-hot-toast';
                   const user =result.user;
                   console.log(user)
                   form.reset()
+                  handleUpdateProfile(name , image)
                 })
                 .catch(e=>console.error(e))
+
+                const handleUpdateProfile =(name, photoURL )=>{
+
+                  const profile = {
+
+                    displayName: name,
+                    photoURL : image
+                  }
+                  updateUserProfile(profile)
+                  .then(()=>{})
+                  .catch(e=>console.error(e))
+                }
             }
-        
-            return (
+
+
+         return (
                 <Container className=''>
                 <Row className=''>
                  

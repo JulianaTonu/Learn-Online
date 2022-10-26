@@ -19,6 +19,7 @@ const CardDetails = () => {
           {details}
         </Card.Text>
         <p>Total view: {total_view}</p>
+        <button className='btn btn-primary'>Get Premium Access</button>
       </Card.Body>
     </Card>
         </div>
