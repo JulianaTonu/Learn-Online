@@ -20,7 +20,20 @@ const Blog = () => {
               Other ways to authenticate can be through cards, retina scans, voice recognition, and fingerprints.
               </p>
             </div>
-         
+            <div class="p-4 mb-4 ques">
+              <h5>3. How does the Private Route works ? </h5>
+              <p>Ans :The react private route component renders child components ( children ) if the user is logged in. If not logged in the user is redirected to the /login page with the return url passed in the location state property.  
+              </p>
+            </div>
+           
+            <div class="p-4 mb-4 ques">
+              <h5>4.What is Node? How does Node work? </h5>
+              <p>Ans : A node is a basic unit of a data structure, such as a linked list or tree data structure. Nodes contain data and also may link to other nodes. Links between nodes are often implemented by pointers.What does 
+Node allows developers to write JavaScript code that runs directly in a computer process itself instead of in a browser.
+    </p>
+                
+              
+            </div>
            
     
 
