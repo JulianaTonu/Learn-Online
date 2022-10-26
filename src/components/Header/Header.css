@@ -12,6 +12,21 @@
     margin-right: 4px;
     
 }
+.user-name{
+    visibility: hidden;
+}
+.toltip{
+    position: relative;
+    cursor: pointer;
+
+}
+ .user-name:hover{
+    visibility: visible;
+}
+.pro-img{
+    /* position: absolute; */
+}
+
 .title{
    
      font-family: bold;

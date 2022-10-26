@@ -10,6 +10,7 @@ import SideNav from '../SideNav/SideNav';
 import { AuthContext } from '../../context/UserContext';
 import { Image } from 'react-bootstrap';
 import { FaUser } from 'react-icons/fa';
+import Tippy from '@tippyjs/react';
 
 const Header = () => {
 
@@ -42,12 +43,15 @@ const Header = () => {
 
 <>
 
- <NavLink className="px-3  nav text-warning" >{user?.displayName}</NavLink>
- <Image  title={user?.name}
+ <Tippy className='text-warning' content={user?.displayName}>
+ <Image  
 style ={{height:'40px'}} roundedCircle
 src={user?.photoURL}
 ></Image>
+ </Tippy>
 <button onClick={handleLogOut} className="px-3 ms-3 btn btn-warning" >Logout</button>
+
+ 
 </>
 
 :
