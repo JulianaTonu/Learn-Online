@@ -7,6 +7,7 @@ import CardDetails from "../components/CardDetails/CardDetails";
 import Register from "../components/Register/Register";
 import Login from "../components/Login/Login";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
+import Blog from "../components/Blog/Blog";
 
 
 
@@ -26,9 +27,14 @@ export const routes =createBrowserRouter([
                 path:'/login',
                 element:<Login></Login>
             },
+
             {
                 path:'/register',
                 element:<Register> </Register>
+            },
+            {
+                path:'/blog',
+                element:<Blog></Blog>
             },
             {
                 path:'/category/:id',

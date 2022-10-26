@@ -33,6 +33,7 @@ const Header = () => {
           <Nav className="">
             <NavLink className="px-3 ms-5 nav text-warning" to="/">Tutorials</NavLink>
  
+            <NavLink className="px-3  nav text-warning" to="/faq">FAQ</NavLink>
             <NavLink className="px-3  nav text-warning" to="/blog">Blog</NavLink>
 
             <NavLink className="px-3  nav text-warning" to="/register">Register</NavLink>
