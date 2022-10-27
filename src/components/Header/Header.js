@@ -77,7 +77,7 @@ src={user?.photoURL}
 :
 
 <>
-<NavLink className="px-3  nav text-warning my-2" to="/login">Login</NavLink>
+<NavLink className="px-3  nav text-primary my-2" to="/login">Login</NavLink>
 </>
 }
 <button onClick={ toggleTheme } className="px-3 ms-3 btn btn-dark my-2" >Theme</button>
