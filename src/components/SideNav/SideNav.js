@@ -7,7 +7,7 @@ const SideNav = () => {
     const [categories, setCategories] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/tutorials')
+        fetch('https://learn-online-server.vercel.app/tutorials')
         .then(res=>res.json())
         .then(data=>setCategories(data))
     },[])

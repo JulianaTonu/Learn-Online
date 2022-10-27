@@ -47,12 +47,12 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="">
-            <NavLink className="px-3 ms-5 nav text-primary" to="/">Tutorials</NavLink>
+            <NavLink className="px-3 ms-5 nav text-primary my-2" to="/">Tutorials</NavLink>
  
-            <NavLink className="px-3  nav text-primary" to="/faq">FAQ</NavLink>
-            <NavLink className="px-3  nav text-primary" to="/blog">Blog</NavLink>
+            <NavLink className="px-3  nav text-primary my-2" to="/faq">FAQ</NavLink>
+            <NavLink className="px-3  nav text-primary my-2" to="/blog">Blog</NavLink>
 
-            <NavLink className="px-3  nav text-primary" to="/register">Register</NavLink>
+            <NavLink className="px-3  nav text-primary my-2" to="/register">Register</NavLink>
            
 
             
@@ -62,14 +62,14 @@ const Header = () => {
 { user?.uid  && user?.photoURL ?
 
 <>
-
- <Tippy className='text-warning' content={user?.displayName}>
- <Image  
-style ={{height:'40px'}} roundedCircle
+{/* // tippy for show user name when hover user image */}
+ <Tippy className='text-warning fw-bold' content={user?.displayName}>
+ <Image  className='pro-pic my-2'
+ roundedCircle
 src={user?.photoURL}
 ></Image>
  </Tippy>
-<button onClick={handleLogOut} className="px-3 ms-3 btn btn-primary" >Logout</button>
+<button onClick={handleLogOut} className="px-3 ms-3 btn btn-primary my-2"  >Logout</button>
 
  
 </>
@@ -77,10 +77,10 @@ src={user?.photoURL}
 :
 
 <>
-<NavLink className="px-3  nav text-warning" to="/login">Login</NavLink>
+<NavLink className="px-3  nav text-warning my-2" to="/login">Login</NavLink>
 </>
 }
-<button onClick={ toggleTheme } className="px-3 ms-3 btn btn-dark " >Theme</button>
+<button onClick={ toggleTheme } className="px-3 ms-3 btn btn-dark my-2" >Theme</button>
 
 
         <div className='d-lg-none'>

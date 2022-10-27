@@ -7,7 +7,8 @@ const Tutorials = () => {
     console.log(all_tutorials)
     return (
         <>
-        <p className='text-primary m-4 mt-5 text-center'>All Tutorials are here.Choose your favorite topic and start learn from today.Good Luck.</p>
+        <h3 className='text-center mt-3'>All Tutorials</h3>
+        <p className='text-primary  text-center fs-5'>All Tutorials are here.Choose your favorite topic and start learn from today.Good Luck.</p>
 
       <div className='col tuto '>
      

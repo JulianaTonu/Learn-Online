@@ -60,6 +60,7 @@
  @media Screen and (max-width:767px){
     .register{
         margin:auto;
+        margin-bottom: 30px;
     }
     .sub-btn{
         width: 190px;

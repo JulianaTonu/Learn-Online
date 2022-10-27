@@ -4,13 +4,14 @@
     
 }
 .ques{
-    border: 2px solid rgb(153, 252, 254);
+    border: 1px solid rgb(129, 180, 251);
     padding: 10px;
     border-radius: 10px;
     width: 330px;
     margin-left: 10%;
-    box-shadow: 3px 3px 3px 2px rgb(64, 42, 184);;
-    background-color: rgb(178, 244, 244);
+   
+    box-shadow: 4px 4px 8px rgb(68, 39, 254);
+    background-color: rgb(234, 242, 254);
 }
 
 @media screen and (max-width:767px){

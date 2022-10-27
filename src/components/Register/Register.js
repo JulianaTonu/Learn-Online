@@ -32,6 +32,8 @@ import toast from 'react-hot-toast';
                 if(password !== confirm){
                   toast.error("password dosen't match")
                 }
+
+                
                 createUser(email, password)
                 .then(result=>{
                   const user =result.user;

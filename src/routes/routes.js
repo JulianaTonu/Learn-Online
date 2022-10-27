@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import Main from "../layout/Main";
-import CourseTutorials from "../components/CourseTutorials/CourseTutorials";
+
 import Tutorials from "../components/Tutorials/Tutorials";
 import CardDetails from "../components/CardDetails/CardDetails";
 import Register from "../components/Register/Register";
@@ -22,7 +22,7 @@ export const routes =createBrowserRouter([
             {
                 path:'/',
                 element:<Tutorials></Tutorials>,
-                loader :()=> fetch(`http://localhost:5000/tutorials`)
+                loader :()=> fetch(`https://learn-online-server.vercel.app/tutorials`)
             },
             
             {
@@ -43,25 +43,16 @@ export const routes =createBrowserRouter([
                 element:<Blog></Blog>
             },
 
-            
-
-            {
-                path:'/category/:id',
-                element:<CourseTutorials></CourseTutorials>
-                
-            },
-
-          
             {
                 path:'/details/:id',
                 element:<CardDetails></CardDetails>,
-                loader: ({params})=> fetch(`http://localhost:5000/tutorials/${params.id}`)
+                loader: ({params})=> fetch(`https://learn-online-server.vercel.app/tutorials/${params.id}`)
             },
 
             {
                 path:'/checkout/:id',
                 element:<PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/tutorials/${params.id}`)
+                loader: ({params})=> fetch(`https://learn-online-server.vercel.app/tutorials/${params.id}`)
             }
            
 

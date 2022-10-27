@@ -10,6 +10,7 @@ import { FaGithub } from 'react-icons/fa';
 
 import './Login.css'
 import { AuthContext } from '../../context/UserContext';
+import toast from 'react-hot-toast';
 
 
 
@@ -17,6 +18,7 @@ const Login = () => {
 
     const {signIn, signInwithGoogle,signInWithGithub} = useContext(AuthContext)  
     const [error , setError] =useState('') 
+    const [success, setSuccess] =useState(false)
     const navigate =useNavigate()
     const location =useLocation()
 
@@ -29,12 +31,17 @@ const from =location.state?.from?.pathname || '/'
         const password =form.password.value;
         console.log( email, password)
 
+        
+          toast.success("succesfully Login")
+        
         signIn(email, password)
         .then(result=>{
           const user =result.user;
           console.log(user)
           form.reset()
+          setSuccess(true)
           navigate(from,{replace:true})
+          setError('')
         })
         .catch(error=>{
 
@@ -48,7 +55,9 @@ const from =location.state?.from?.pathname || '/'
       .then(result=>{
         const user =result.user
         console.log(user)
+        setSuccess(true)
         setError('')
+        navigate(from,{replace:true})
       })
       .catch(error=>{
 
@@ -62,6 +71,9 @@ const from =location.state?.from?.pathname || '/'
       .then(result=>{
         const user =result.user
         console.log(user)
+        setSuccess(true)
+        setError('')
+        navigate(from,{replace:true})
       })
       .catch(error=>{
 
