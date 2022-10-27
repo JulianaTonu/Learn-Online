@@ -7,7 +7,7 @@ const SideNav = () => {
     const [categories, setCategories] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/categories')
+        fetch('http://localhost:5000/tutorials')
         .then(res=>res.json())
         .then(data=>setCategories(data))
     },[])
@@ -18,11 +18,11 @@ const SideNav = () => {
               {
 
                   categories.map(category => <p
-                key={category.id}
+                key={category._id}
                 category ={category}
                     
                 >
-                 <Link className="side-nav" to={`/category/${category.id}`}>{category.name}</Link>
+                 <Link className="side-nav" to={`/details/${category._id}`}>{category.name}</Link>
 
                  
 
@@ -34,3 +34,5 @@ const SideNav = () => {
 };
 
 export default SideNav;
+
+

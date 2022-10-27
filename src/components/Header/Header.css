@@ -31,11 +31,11 @@
 
 .dark {
     background-color: #333;
-    /* color: rgb(33, 18, 201); */
-    color: purple;
+    color: #2112c9;
+    /* color: rgb(30, 234, 249); */
   }
   .light {
     background-color: #fff;
-    /* color: rgb(33, 18, 201); */
-    color: purple;
+    color: rgb(33, 18, 201);
+    /* color: purple; */
   }
