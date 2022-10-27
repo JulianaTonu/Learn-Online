@@ -1,4 +1,44 @@
-# Getting Started with Create React App
+# Project: Learn Online 
+## Live Link: https://learn-online-aea9c.web.app/
+
+## Features :
+
+#### 1. Toggle Theme (dark/light)
+
+
+#### 2. Firebase Authentication(email &password , Google, Github)
+
+
+#### 3. Private Route
+
+
+#### 4. Clickable Cards
+
+
+#### 5. Download pdf file for course details
+
+
+#### 6. Responsive ( Mobile And Desktop)
+
+## Technology💻
+1. React 
+2. Bootstrap 5
+3. React Icons
+4. React Hot Toast
+5. React Router Dom
+6. Firebase
+
+
+
+
+
+
+
+
+
+
+
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
