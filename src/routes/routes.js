@@ -9,6 +9,7 @@ import Login from "../components/Login/Login";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import Blog from "../components/Blog/Blog";
 import CheckOut from "../components/CheckOut/CheckOut";
+import FAQ from "../components/FAQ/FAQ";
 
 
 
@@ -32,6 +33,10 @@ export const routes =createBrowserRouter([
             {
                 path:'/register',
                 element:<Register> </Register>
+            },
+            {
+                path:'/faq',
+                element:<FAQ></FAQ>
             },
             {
                 path:'/blog',

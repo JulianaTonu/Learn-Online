@@ -10,7 +10,7 @@ const CardDetails = () => {
     const cardDetails = useLoaderData()
     
     console.log('cardDetails',cardDetails)
-    const {name, details, image_url, total_view,_id } =cardDetails
+    const {name, details, image_url, total_view,_id } = cardDetails
 
    const  pdfGenerate =()=>{
       let doc = new jsPDF('landscape', 'px', 'a4', 'false');
@@ -31,7 +31,7 @@ const CardDetails = () => {
     return (
         <div>
 
-          <button className='btn btn-info' onClick={pdfGenerate}>DownLoad Pdf</button>
+          <button className='btn btn-danger ' onClick={pdfGenerate}>DownLoad Pdf</button>
                <Card className='details-card'>
       <Card.Img className='img' variant="top" src={image_url} />
       <Card.Body>
