@@ -14,16 +14,16 @@ const CardDetails = () => {
 
    const  pdfGenerate =()=>{
       let doc = new jsPDF('landscape', 'px', 'a4', 'false');
-      doc.addPage()
+      
       doc.setFont('Helvertica', 'bold')
-      doc.text(60,60, 'Name :')
-      doc.text(60,80, 'Total View :')
-      doc.text(60,100, 'Details :')
+      doc.text(30,30, 'Name :')
+      doc.text(30,50, 'Total View :')
+      doc.text(30,70, 'Details :')
       
       doc.setFont('Helvertica', 'Normal')
-      doc.text(100,60, `${name}`)
-      doc.text(100,80,`${total_view}`)
-      doc.text(110,100,`${details}`)
+      doc.text(70,30, `${name}`)
+      doc.text(100,50,`${total_view}`)
+      doc.text(80,70,`${details}`)
     
       doc.save('a.pdf')
     }
